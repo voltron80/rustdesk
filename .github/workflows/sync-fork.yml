@@ -1,0 +1,13 @@
+name: Sync Fork
+on:
+  schedule:
+    - cron:  '0 4 * * 3'
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Sync Fork
+        run: |
+          git pull
+
